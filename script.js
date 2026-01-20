@@ -120,7 +120,7 @@ const city = 'kolkata'
 
 
 async function callAPI() {
-    let response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${APIKEY}&q=${city}`)
+    let response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${APIKEY}&q=${city}`)
 
     let value = await response.json();
 
