@@ -529,10 +529,10 @@ const greetings = [
 function getBotReply(message) {
     message = message.toLowerCase();
 
-
     if (greetings.some(greet => message.includes(greet))) {
         return "Hello! How can I help you today? 😊";
     }
+
     if (message.includes("price") || message.includes("cost")) {
         return "Our pricing depends on the service. Can you tell me what you're looking for?";
     }
@@ -541,12 +541,23 @@ function getBotReply(message) {
         return "You can contact us via email or phone. Would you like the details?";
     }
 
+    // 👉 Todo task intent
+    if (
+        message.includes("add task") ||
+        message.includes("todo") ||
+        message.includes("to-do") ||
+        message.includes("task in my todo")
+    ) {
+        return "Yes, of course! 😊 Please tell me the task you want to add.";
+    }
+
     if (message.includes("thank")) {
         return "You're welcome! 😊";
     }
 
     return "I'm not sure I understood that. Can you explain a bit more?";
 }
+
 
 //todo list command handler
 
